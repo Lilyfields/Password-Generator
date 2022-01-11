@@ -5,7 +5,11 @@
   //Validate the data input
   //Password is either displayed in an alert or writteb to the page.
 
-var uppers = confirm("Would you like to use uppercase letters?");
+
+var passwoed
+
+
+  var uppers = confirm("Would you like to use uppercase letters?");
 var lowers = confirm("Would you like to use lowercase letters?");
 var numbers = confirm("Would you like to use numbers?");
 var symbols = confirm("Would you like to use special characters?");
