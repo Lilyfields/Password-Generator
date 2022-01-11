@@ -1,12 +1,9 @@
-//List of criteria for password generator
-//need to prompt the user to meet criteria set for password
-  //Firstly to consider length of password
-  //Secondly Password needs to consist of numbers, lower case, upper case, and special character
-  //Validate the data input
-  //Password is either displayed in an alert or writteb to the page.
+//we would like the password generator to generate password after end user put in numbers and display outcomes. 
 
 
-var passwoed
+var passwordBtnEl = $('#generate');
+var passwordDisplayEl = $('#password-display');
+var passwordSettingsEl = $('#settings');
 
 
   var uppers = confirm("Would you like to use uppercase letters?");
