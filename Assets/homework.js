@@ -1,86 +1,83 @@
-//we would like the password generator to generate password after end user put in numbers and display outcomes. 
 
+// communicating with DOM
+var passwordEl = document.getElementById('password');
+var lengthEl = document.getElementById('length');
+var upperCaseEl = document.getElementById('uppercase');
+var lowerCaseEl = document.getElementById('lowercase');
+var numberEl = document.getElementById ('number');
+var symbolEl = document.getElementById ('symbol');
+var generateEl = document.getElementById ('generate');
 
-var passwordBtnEl = $('#generate');
-var passwordDisplayEl = $('#password-display');
-var passwordSettingsEl = $('#settings');
+//Declared constant object which can store the random value
 
+const randomFunc = {
+  upper: getRandomUpper,
+  lower: getRandomLower,
+  number: getRandomNumbers,
+  symbol: getRandomSymbols,
 
-  var uppers = confirm("Would you like to use uppercase letters?");
-var lowers = confirm("Would you like to use lowercase letters?");
-var numbers = confirm("Would you like to use numbers?");
-var symbols = confirm("Would you like to use special characters?");
+}
+//Achieved when cirlce button is clicked on. The end user can choose whether they want to include either numbers, letters (both upper and lower case), or symbols in their password.
+//Set as default to include all letters (both uper and lowercase), numbers, and symbols. 
+//End user can also select the length or number of characters they need in thier password.
 
+generateEl.addEventListener('click', () => {
+  const length = +lengthEl.value;
+  const hasUpper = upperCaseEl.checked;
+  const hasLower = lowerCaseEl.checked;
+  const hasNumber = numberEl.checked;
+  const hasSymbol = symbolEl.checked;
 
-  const resultEl =document.getElementById('result');
-  const lengthtEl =document.getElementById('length');
-  const uppercaseEl =document.getElementById('uppers');
-  const lowercaseEl =document.getElementById('lowers');
-  const numbersEl =document.getElementById('numbers');
-  const symbolsEl =document.getElementById('symbols');
-  const generatebtnEl =document.getElementById('generate');
+  passwordEl.innerText =generatedPassword(hasUpper, hasLower,hasNumber,hasSymbol, length);
+});
 
+function generatedPassword(upper, lower, number, symbol, length) {
+  var generatedPassword = "";
+  const typesCount = upper + lower + number + symbol;
+  const typesArr = [{lower},{upper},{number},{symbol}].filter(item =>
+    Object.values(item)[0]);
 
-function generateNewPassword() {
-  var password = ['uppers','lowers','numbers','symbols'];
-
-  var length = Number(prompt("How many characters would you like your password to be?"));
-while (isNaN(length) || length < 8 || length > 10) length = Number(prompt("Length must be 8-10 characters. How many characters would you like your password to be?"));
-
-while (!uppers && !lowers && !numbers && !symbols) {
-    alert("You must select at least one character type!");
-    uppers = confirm("Would you like to use uppercase letters?");
-    lowers = confirm("Would you like to use lowercase letters?");
-    numbers = confirm("Would you like to use numbers?");
-    symbols = confirm("Would you like to use special characters?");
-
-
-for ( const element of password) {
-        console.log(element);
-       
+    if(typesCount=== 0){
+      return 'Select at least 1 option';
     }
+
+      for(var i=0; i<length; i+=typesCount) {
+        typesArr.forEach(types => {
+       const funcName = Object.keys(types)[0];
+        generatedPassword += randomFunc[funcName]();
+    });
+}
+
+const finalPassword = generatedPassword.slice(0,length);
+  return finalPassword;
+
+}
+
+
+function getRandomUpper() {
+  return String.fromCharCode(Math.floor(Math.random()*26) + 97);
+
+}
+
+// id uppercase
+function getRandomLower() {
+  return String.fromCharCode(Math.floor(Math.random()*26) + 65);
+}
+
+//id lowercase
+
+function getRandomNumbers() {
+  return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
   
-  if (password = uppers){ 
-      password += "QWERTYUIOPASDFGHJKLZXCVBNM";
-      console.log(uppers);
-    }
-  
-  if (password = lowers) {
-      password += "qwertyuiopasdfghjklzxcvbnm";
-      console.log(lowers);
-    }
+}
 
-  if (password = numbers){
-      password += "1234567890";
-     console.log(numbers);
+//id numbers
 
-    }
+function getRandomSymbols() {
+  const symbol = '!@#$%^&*(){}[]+<>/?,.=';
+  return symbol[Math.floor(Math.random() *symbol.length)];
+}
 
+//id symbols
 
-    if (password = symbols){
-        password += "!@#$%^&*(){}[]=<>/,.";
-        console.log(symbols);
-    }
-
-    
-    resultEl.innerText = generatedPassword(hasLower, hasUpper, hasNumber, 
-      hasSymbol, length);
-
-      window.addEventListener('load', alert);
-      
-        const input = document.querySelector ('#btn');
-        const lo =document.querySelector('#password');
-        
-
-     'btn'.addEventListener('click',
-        
-         console.log(password));
-    
-
-   //initially the code work; i.e. when ran on browser window will dropped box
-   //prompt the user with questions. However, does not generate password. When pressing on button
-   //script stopped working as we add further function in attempt to ge password generator to display code
-   //following the series of prompt. Instructor's original code is lost.   
-   //Console display error message "Uncaught Syntax Error: Unexpected end of input" 
-
-    }}
+//id generate

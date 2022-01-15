@@ -22,41 +22,42 @@
             id="password"
             placeholder="Your Secure Password"
             aria-label="Generated Password"
+      
           ></textarea>
           </div>
 
           <div class="settings">
-            <label>Password length (Max:10)</label>
-            <input type="number" min="8" max="10" value="8" id="characterAmountNumber">
+            <label> Password length (Max:20)</label>
+            <input type="number" min= "8" max="20" value="20" id="length"/>
          </div>
 
          <div class="settings">
-          <label>Include uppercase letters</label>
-          <input type="checkbox" id="symbols" checked class="toggle"/>
+            <label>Include uppercase letters</label>
+            <input type="checkbox" id="uppercase" checked class="toggle"/>
          </div>
 
          <div class="settings">
             <label>Include lowercase letters</label>
-            <input type="checkbox" id="symbols" checked class ="toggle"/>
+            <input type="checkbox" id="lowercase" checked class ="toggle"/>
          </div>
 
          <div class="settings">
             <label>Include numbers</label>
-            <input type="checkbox" id="symbols" checked class="toggle"/>
+            <input type="checkbox" id="number" checked class="toggle"/>
          </div>
 
          <div class="settings">
             <label>Include symbols</label>
-            <input type="checkbox" id="symbols" checked class="toggle"/>
+            <input type="checkbox" id="symbol" checked class="toggle"/>
          </div>
             
         <div class="card-footer">
-          <pre class ="text-dark bg-light p-5" id="password-display">Password will go here...</pre>
           <button id="generate" class="btn">Generate Password</button>
         </div>
       </div>
     </div>
 
-    <script src="./Assets/homework.js"></script>
+    <script type= "text/javascript" src="./Assets/homework.js" defer></script>
+    <script src="https://kit.fontawesome.com/46249a0d76.js" crossorigin="anonymous"></script>
   </body>
 </html>
