@@ -78,6 +78,9 @@ function getRandomSymbols() {
   return symbol[Math.floor(Math.random() *symbol.length)];
 }
 
-//id symbols
+
+  
+
+//d symbols
 
 //id generate

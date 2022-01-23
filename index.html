@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Password Generator</title>
     <link rel="stylesheet" href="./Assets/style.css" />
+  
   </head>
   <body>
     <div class="wrapper">
@@ -27,30 +28,94 @@
           </div>
 
           <div class="settings">
-            <label> Password length (Max:20)</label>
+            <label> Length (Min:8 - Max:20)</label>
             <input type="number" min= "8" max="20" value="20" id="length"/>
          </div>
 
          <div class="settings">
             <label>Include uppercase letters</label>
-            <input type="checkbox" id="uppercase" checked class="toggle"/>
+            <input onclick="check1()" type="checkbox" id="uppercase" checked class="toggle"></input>
          </div>
 
          <div class="settings">
             <label>Include lowercase letters</label>
-            <input type="checkbox" id="lowercase" checked class ="toggle"/>
+             <input  onclick="check2()" type="checkbox" id="lowercase" checked class ="toggle"></input>
          </div>
 
          <div class="settings">
             <label>Include numbers</label>
-            <input type="checkbox" id="number" checked class="toggle"/>
+            <input onclick="check3()" type="checkbox" id="number" checked class="toggle"></input>
          </div>
 
          <div class="settings">
             <label>Include symbols</label>
-            <input type="checkbox" id="symbol" checked class="toggle"/>
+            <input  onclick ="check4()" type="checkbox" id="symbol" checked class="toggle"></input>
+
          </div>
+
+         <script>
+           function check1 (){
+            var result = confirm ('Do you want to remove the symbols from password?');
+            if(result == false) {
+
+              event.preventDefault ();
+              
+            } else {
+              function getRandomSymbol() {
+              return symbol[Math.floor(Math.random() *symbol.length)];
+              }
+            }
+          }
+          
+          
+        
+
+            function check2() {
+              var result = confirm ('Do you want to remove the numbers from password?');
+              if(result == false) {
+                event.preventDefault ();
+              } else {
+                function getRandomNumber() {
+                return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+  
+                }
+              }
+
+            }
+
+           
+
+            function check3 () {
+              var result = confirm ('Do you want to remove the lowercase letters from password?');
+            if(result==false) {
+              event.preventDefault ();
             
+            } else{
+              function getRandomLower() {
+              return String.fromCharCode(Math.floor(Math.random()*26) + 65);
+                }
+              }
+              
+            }
+
+            
+
+            function check4() {
+              var result = confirm ('Do you want to remove the uppercase letters from password?');
+              if(result==false) {
+                event.preventDefault ();
+              }else{
+                function getRandomUpper() {
+                return String.fromCharCode(Math.floor(Math.random()*26) + 97);
+
+                }
+              }
+
+            }
+
+         </script>
+         
+                     
         <div class="card-footer">
           <button id="generate" class="btn">Generate Password</button>
         </div>
@@ -58,6 +123,10 @@
     </div>
 
     <script type= "text/javascript" src="./Assets/homework.js" defer></script>
-    <script src="https://kit.fontawesome.com/46249a0d76.js" crossorigin="anonymous"></script>
+   
+      
+    
+
+
   </body>
 </html>
