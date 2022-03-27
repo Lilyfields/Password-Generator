@@ -37,6 +37,9 @@ THEN the password is either displayed in an alert or written to the page
 
 ## Images for the Password Generator
 
+![Screenshot 2022-03-28 021746](https://user-images.githubusercontent.com/94832331/160288418-6101ef90-6ad4-41e2-a75a-37d8cf563f84.png)
+
+
  
 
 ### Technical Features
