@@ -37,11 +37,26 @@ THEN the password is either displayed in an alert or written to the page
 
 ## Images for the Password Generator
 
-![Screenshot 2022-03-28 021746](https://user-images.githubusercontent.com/94832331/160288418-6101ef90-6ad4-41e2-a75a-37d8cf563f84.png)
+The following image shows the web application's appearance and functionality:
 
-![Screenshot 2022-03-28 021848](https://user-images.githubusercontent.com/94832331/160288451-35fb896d-06b5-4b1a-8656-e1139311bd6e.png)
-
+<image src="https://user-images.githubusercontent.com/94832331/160288418-6101ef90-6ad4-41e2-a75a-37d8cf563f84.png" width=300 height=150> 
+  
+```
+ Image of the Password Generator at the start .
+  ```
+  
+<image src="https://user-images.githubusercontent.com/94832331/160288451-35fb896d-06b5-4b1a-8656-e1139311bd6e.png" width=300 height=150> 
  
+  ```
+ Image of when you click on the Toggle and a prompt come ups.
+  ```
+  
+ <image src="https://user-images.githubusercontent.com/94832331/160288504-b74c8bef-3c6c-4ca8-af45-4fe9447f26b8.png" width=300 height=150> 
+   
+   ```
+   Images of when a Toggle has been selected; and the Password Generator begins to generate password based on the person's selection. 
+   ```
+
 
 ### Technical Features
 
