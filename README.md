@@ -15,7 +15,7 @@ I WANT to randomly generate a password that meets certain criteria
 SO THAT I can create a strong password that provides greater security
 ```
 
-## Acceptance Criteria
+##Concept of the design and function
 
 ```
 GIVEN I need a new, secure password
