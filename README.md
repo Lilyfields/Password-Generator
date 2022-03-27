@@ -45,7 +45,7 @@ The following image shows the web application's appearance and functionality:
  Image of the Password Generator at the start .
   ```
   
-<image src="https://user-images.githubusercontent.com/94832331/160288451-35fb896d-06b5-4b1a-8656-e1139311bd6e.png" width=300 height=150> 
+<image src="https://user-images.githubusercontent.com/94832331/160288873-9c039004-38de-40a3-91d5-f42d500fa991.png" width=300 height=150> 
  
   ```
  Image of when you click on the Toggle and a prompt come ups.
